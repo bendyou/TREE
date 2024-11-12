@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Tree = require('../models/tree').Tree;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
