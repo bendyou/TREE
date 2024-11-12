@@ -7,15 +7,27 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/tree1', function(req, res, next) {
-  res.send("<h1>Дерево 1</h1>")
-});
+  res.render('tree', {
+  title: "Дерево",
+  picture: "images/tree1.png",
+  desc: "Ну типо описание первого дерева"
+  });
+ });
 
-router.get('/tree2', function(req, res, next) {
-  res.send("<h1>Дерево 2</h1>")
-});
+ router.get('/tree2', function(req, res, next) {
+  res.render('tree', {
+  title: "Дерево",
+  picture: "images/tree2.png",
+  desc: "Ну типо описание первого дерева"
+  });
+ });
 
-router.get('/tree3', function(req, res, next) {
-  res.send("<h1>Дерево 3</h1>")
-});
+ router.get('/tree3', function(req, res, next) {
+  res.render('tree', {
+  title: "Дерево",
+  picture: "images/tree3.png",
+  desc: "Ну типо описание первого дерева"
+  });
+ });
 
 module.exports = router;
