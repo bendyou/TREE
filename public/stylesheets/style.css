@@ -1,8 +1,105 @@
+/* Основной стиль страницы */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: inherit;
 }
+
+/* Навигационная панель */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler {
+  border: 1px solid #007bff;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-toggler-icon {
+  background-color: #007bff;
+}
+
+/* Название по центру */
+.navbar-brand {
+  font-weight: bold;
+  color: #343a40;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Оформление кнопок */
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: #555;
+  font-size: 1rem;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+/* Фон кнопок */
+.navbar-nav {
+  background-color: #f1f1f1; /* Цвет фона для блока кнопок */
+  padding: 10px 0;
+}
+
+/* Стили для адаптивности */
+@media (max-width: 768px) {
+  .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+/* Плавное появление всей страницы */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+body {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Для кнопок в меню */
+.navbar-toggler {
+  border: 1px solid #007bff;
+}
+
+.navbar-toggler:hover {
+  background-color: #007bff;
+}
+
