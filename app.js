@@ -35,6 +35,11 @@ store: MongoStore.create({mongoUrl:
 'mongodb://localhost/tc2024'})
 }))
 
+app.use(function(req,res,next){
+  req.session.counter = req.session.counter + 1 || 1
+  next()
+  })
+  
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/trees', trees);

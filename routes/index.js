@@ -4,9 +4,9 @@ var Tree = require('../models/tree').Tree;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  req.session.greeting = "Hi!!!";
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', counter:req.session.counter });
   });
+  
   
 router.get('/tree1', function(req, res, next) {
   res.render('tree', {
