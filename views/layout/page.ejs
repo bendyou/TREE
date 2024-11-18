@@ -20,16 +20,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <% if(typeof nav == 'object' && nav){
+                    nav.forEach(function(item){
+                    %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/trees/tree1">Дерево 1</a>
+                    <a class="nav-link" href="/trees/<%= item.nick %>"><%=
+                    item.title %></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/trees/tree2">Дерево 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/trees/tree3">Дерево 52</a>
-                    </li>
-                </ul>
+                    <%
+                    })}
+                    %>
+                    </ul>                    
             </div>
         </div>
     </nav>
