@@ -11,9 +11,11 @@
     "ejs": "^3.1.10",
     "ejs-locals": "^1.0.2",
     "express": "^4.21.1",
+    "express-session": "^1.18.1",
     "http-errors": "~1.6.3",
     "mongodb": "^6.9.0-dev.20241015.sha.7fde8ddc",
     "mongoose": "^8.8.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "save": "^2.9.0"
   }
 }
