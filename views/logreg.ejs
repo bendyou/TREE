@@ -1,33 +1,146 @@
 <% layout('./layout/page.ejs') %>
 
-<div class="conteiner">
-    <h1>Регистрация и вход</h1>
-    <p>Введите имя пользователя и пароль, если такого пользователя нет, то он будет создан.</p>
-    <form class="form-horizontal" action="/logreg" method="post">
+<div class="container">
+    <h1 class="form-title">Регистрация и вход</h1>
+    <p class="form-description">Введите имя пользователя и пароль, если такого пользователя нет, то он будет создан.</p>
+
+    <form class="form" action="/logreg" method="post">
         <div class="form-group">
-            <label class="control-label col-sm-1">Имя</label>
-            <div class="col-sm-5">
-                <input class="form-control" type="text"
-                                   placeholder="Введите имя" name="username"/>
-            </div>
+            <label for="username" class="form-label">Имя</label>
+            <input class="form-input" type="text" id="username" name="username" placeholder="Введите имя" required />
         </div>
+        
         <div class="form-group">
-            <label class="control-label col-sm-1">Пароль</label>
-            <div class="col-sm-5">
-                <input class="form-control" type="password"
-                                 placeholder="Введите пароль" name="password"/>
-            </div>
+            <label for="password" class="form-label">Пароль</label>
+            <input class="form-input" type="password" id="password" name="password" placeholder="Введите пароль" required />
         </div>
-        <br/>
+
         <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-5">
-                <input class="btn btn-primary" type="submit"
-                                             value="Войти"/>
-            </div>
+            <button class="btn-submit" type="submit">Войти</button>
         </div>
-        <br/>
+
         <% if(error) { %>
             <div class="alert alert-danger"><%= error %></div>
-        <% } %>  
+        <% } %>
     </form>
 </div>
+
+<!-- Подключение стилей для анимаций -->
+<style>
+    /* Общий стиль для страницы */
+    body {
+        background-color: #e8f5e9;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 50px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .form-title {
+        font-size: 36px;
+        color: #2e7d32;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-description {
+        font-size: 20px;
+        color: #388e3c;
+        margin-top: 10px;
+    }
+
+    /* Стиль для формы */
+    .form {
+        margin-top: 30px;
+        background-color: #f1f8e9;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        width: 100%;
+        max-width: 400px;
+        animation: slideUp 1.5s ease-in-out;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        font-size: 18px;
+        color: #388e3c;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 2px solid #388e3c;
+        margin-top: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: #2e7d32;
+        box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+    }
+
+    .btn-submit {
+        padding: 10px 20px;
+        background-color: #f67280;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-submit:hover {
+        background-color: #f8b195;
+        color: #355c7d;
+    }
+
+    .alert {
+        margin-top: 20px;
+        color: #d32f2f;
+        background-color: #ffebee;
+        border: 1px solid #d32f2f;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

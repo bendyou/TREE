@@ -1,9 +1,118 @@
 <% layout('./layout/page.ejs') %>
-<% if(user) {%>
-<h1>Привет <%= user.username %></h1>
-<% }else{ %>
-<h1>Привет незалогиненный пользователь</h1>
+
+<% if(user) { %>
+    <div class="greeting">
+        <h1 class="welcome-message">Привет, <%= user.username %>!</h1>
+        <p class="welcome-text">Ты — наш ценный посетитель! Добро пожаловать в мир деревьев!</p>
+    </div>
+<% } else { %>
+    <div class="greeting">
+        <h1 class="welcome-message">Привет, незалогиненный пользователь!</h1>
+        <p class="welcome-text">Присоединяйся к нам, чтобы исследовать удивительный мир деревьев и природы!</p>
+    </div>
 <% } %>
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
-<p>Счетчик: <%= counter %></p>
+
+<div class="site-description">
+    <h2>О сайте</h2>
+    <p>Этот сайт создан для всех любителей природы и деревьев. Здесь ты можешь узнать о различных видах деревьев, их истории, а также ознакомиться с интересными фактами о лесах и экосистемах.</p>
+    <p>Мы рады приветствовать всех, кто хочет погрузиться в мир природы и узнать больше о нашем зелёном мире!</p>
+</div>
+
+<div class="counter">
+    <p>Счетчик посещений: <%= counter %></p>
+</div>
+
+<!-- Подключение стилей для анимаций -->
+<style>
+    /* Основной стиль страницы */
+    body {
+        background-color: #e8f5e9;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .greeting {
+        animation: fadeIn 1.5s ease-in-out;
+        padding: 20px;
+    }
+
+    .welcome-message {
+        font-size: 36px;
+        font-weight: bold;
+        color: #2e7d32;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .welcome-text {
+        font-size: 20px;
+        color: #388e3c;
+    }
+
+    .site-description {
+        animation: slideUp 1.5s ease-in-out;
+        padding: 30px;
+        margin: 20px;
+        background-color: #f1f8e9;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .site-description h2 {
+        font-size: 28px;
+        color: #388e3c;
+        font-weight: bold;
+    }
+
+    .site-description p {
+        font-size: 18px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .counter {
+        font-size: 20px;
+        margin-top: 20px;
+        font-weight: bold;
+        color: #2e7d32;
+        animation: pulse 1.5s infinite;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>
+
